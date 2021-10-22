@@ -9,8 +9,8 @@ const baseURL = "http://localhost:3001/files/";
 // const S3_BUCKET = "besi-c";
 
 // AWS.config.update({
-//   accessKeyId:"AKIA3UC7LHC5TTJODAI7",
-//   secretAccessKey: "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"
+//   accessKeyId:"keyid",
+//   secretAccessKey: "accesskey"
 // });
 
 // const myBucket = new AWS.S3();
