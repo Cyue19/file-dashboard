@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Component } from "react";
+import { BrowserRouter } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import PropsRoute from "./components/PropsRoute";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
+import DashBoard from "./components/DashBoard";
+import Files from "./components/Files";
+import Relays from "./components/Relays";
+
+class App extends Component {
+
+  render() {
+    return(
+      <BrowserRouter>
+        <Header/>
+        <div className="row">
+          <div className="col-2">
+            <NavBar/>
+          </div>
+          <div className="col-10" style={{padding: "0"}}>
+            <PropsRoute path="/" exact component={DashBoard}/>
+            <PropsRoute path="/files" exact component={Files}/>
+            <PropsRoute path="/relays" exact component={Relays} />
+          </div>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
