@@ -42,7 +42,7 @@ export default function FileWrapper(){
       } catch(err) {
         console.log(err);
       }
-    });
+    }, []);
 
     async function getPost() {
       const response = await axios.get(baseURL);
