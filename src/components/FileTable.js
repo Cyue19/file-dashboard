@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Pagination from "./Pagination";
 
 export default function FileTable(props) {
     const [page, setPage] = useState(1);
@@ -15,16 +16,7 @@ export default function FileTable(props) {
       }
     }
 
-    //create array of buttons
-    function getPageButtons(pages) {
-      const buttons = [];
-      
-      for (let i=1; i<=pages; i++) {
-        buttons.push(<li className="page-item"><button onClick={() => setPage(i)} className="page-link">{i}</button></li>);
-      }
-
-      return buttons;
-    } 
+    var lastPage = getTotalPages();
 
     return(
       <div>
@@ -56,21 +48,7 @@ export default function FileTable(props) {
                   )}
               </tbody>
             </table>
-            <nav>
-              <ul className="pagination">
-                <li className="page-item">
-                  <button onClick={() => setPage(page-1)} className="page-link">
-                    <span aria-hidden="true">&laquo;</span>
-                  </button>
-                </li>
-                {getPageButtons(getTotalPages())}
-                <li className="page-item">
-                  <button onClick={() => setPage(page + 1)} className="page-link">
-                    <span aria-hidden="true">&raquo;</span>
-                  </button>
-                </li>
-              </ul>
-            </nav>
+            <Pagination totPages={lastPage} setPage={setPage} page={page}/>
           </div>
         }
       </div>

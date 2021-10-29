@@ -38,15 +38,23 @@ export default function FileWrapper(){
 
     useEffect(() => {
       try {
-        getPost();
+        getFiles();
+        getCount();
       } catch(err) {
         console.log(err);
       }
-    });
+    }, []);
 
-    async function getPost() {
+    async function getFiles() {
       const response = await axios.get(baseURL);
       setListFiles(response.data);
+    }
+
+    async function getCount() {
+      var url = baseURL + "count";
+      console.log(url);
+      const response = await axios.get(url);
+      console.log(response);
     }
 
     // useEffect(() => {
