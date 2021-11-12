@@ -21,7 +21,7 @@ const baseURL = "http://localhost:3001/files/";
 // }
 
 
-export default function FileWrapper(){
+export default function FileWrapper(props){
 
     const [listFiles, setListFiles] = useState([]);
 
@@ -88,7 +88,7 @@ export default function FileWrapper(){
 
     return (
         <div>
-            <FileTable files = {listFiles} />
+            <FileTable type={props.type} files = {listFiles} />
         </div>
     );
 }

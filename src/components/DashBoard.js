@@ -5,9 +5,10 @@ import FileWrapper from "./FileWrapper";
 import LastUpload from "./LastUpload";
 import ActivityChart from "./ActivityChart";
 
-export default class DashBoard extends Component {
+export default function DashBoard(props) {
 
-    render() {
+    props.setPath("/");
+
         return (
             <div className="container">
                 <h3 className="mt-3">DashBoard:</h3>
@@ -26,18 +27,13 @@ export default class DashBoard extends Component {
                 </div>
                 <div className="row">
                     <div className="col-12">
-                        <div className="form-card my-3" style={{backgroundColor: "white", width: "100%", position: "relative"}}>
+                        <div className="form-card my-3" style={{backgroundColor: "white", width: "100%"}}>
                             Recent Uploads
-                            <FileWrapper />
+                            <FileWrapper type="recent"/>
                         </div>
                     </div>
-                    {/* <div className="col-3">
-                            <div className="form-card mt-3">
-
-                            </div>
-                    </div> */}
                 </div>
             </div>
         )
-    }
+    
 }

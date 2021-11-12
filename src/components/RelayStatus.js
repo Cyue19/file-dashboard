@@ -36,10 +36,10 @@ export default function RelayStatus(props){
 
 function DeploymentInfo(props){
     return(
-        <div>
+        <div className="row">
             {Object.values(props.deployments ?? {}).map((deployment, _) =>{
                 return (
-                <div>    
+                <div className={"form-card mx-3" + (deployment.DeploymentID==="test" ? " col-11 mb-3" : " col-5")}>    
                     <h3>{deployment.DeploymentID}</h3>
                     <p><b>BaseStation ID:</b> {deployment.DeviceID} | Last updated: {getAgoString(deployment.lastupdated)}</p>
                     {deployment.relays && <RelayTable relays={Object.values(deployment?.relays ?? {})}></RelayTable>}
@@ -54,8 +54,7 @@ function DeploymentInfo(props){
 function RelayTable(props){
 
     return(
-        <div className="tableContainer">
-        <table>
+        <table className="table table-hover table-sm">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -73,7 +72,6 @@ function RelayTable(props){
                 })}
             </tbody>
         </table>
-        </div>
     )
 }
 

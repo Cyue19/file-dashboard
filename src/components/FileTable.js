@@ -18,6 +18,50 @@ export default function FileTable(props) {
     }
   }
 
+  function getAllFiles() {
+    return (
+      props.files.slice((page - 1) * 10, page * 10).map((file) => (
+        <tr key={file._id}>
+          <td>{file.fileName}</td>
+          <td>{file.location}</td>
+          <td>
+            {DateTime.fromISO(file.lastModified).toLocaleString(
+              DateTime.DATETIME_MED
+            )}
+          </td>
+          <td>
+            {file.size > 1000
+              ? `${parseInt(file.size) / 1000} KB`
+              : `${file.size} B`}
+          </td>
+          <td>{file.size === 0 ? "x" : ""}</td>
+        </tr>
+      ))
+    );
+  }
+
+  function getRecentFiles() {
+    return (
+      props.files.slice(0, 10).map((file) => (
+        <tr key={file._id}>
+          <td>{file.fileName}</td>
+          <td>{file.location}</td>
+          <td>
+            {DateTime.fromISO(file.lastModified).toLocaleString(
+              DateTime.DATETIME_MED
+            )}
+          </td>
+          <td>
+            {file.size > 1000
+              ? `${parseInt(file.size) / 1000} KB`
+              : `${file.size} B`}
+          </td>
+          <td>{file.size === 0 ? "x" : ""}</td>
+        </tr>
+      ))
+    );
+  }
+
   var lastPage = getTotalPages();
 
   return (
@@ -37,26 +81,17 @@ export default function FileTable(props) {
               </tr>
             </thead>
             <tbody>
-              {props.files.slice((page - 1) * 10, page * 10).map((file) => (
-                <tr key={file._id}>
-                  <td>{file.fileName}</td>
-                  <td>{file.location}</td>
-                  <td>
-                    {DateTime.fromISO(file.lastModified).toLocaleString(
-                      DateTime.DATETIME_MED
-                    )}
-                  </td>
-                  <td>
-                    {file.size > 1000
-                      ? `${parseInt(file.size) / 1000} KB`
-                      : `${file.size} B`}
-                  </td>
-                  <td>{file.size === 0 ? "x" : ""}</td>
-                </tr>
-              ))}
+              {props.type==="recent" ?
+              getRecentFiles()
+              :
+              getAllFiles()}
             </tbody>
           </table>
+          {props.type==="recent" ?
+          <div></div>
+          :
           <Pagination totPages={lastPage} setPage={setPage} page={page}/>
+          }
         </div>
       )}
     </div>
