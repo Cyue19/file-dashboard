@@ -15,7 +15,11 @@ export default function SearchResults(props) {
 
                 <div className="container mt-3 form-card">
                     All Files
+                    {!location.state.results ? 
+                    <div>Not found</div>
+                    :
                     <FileTable files={location.state.results}/>
+                    }
                 </div>
             </div>
         </div>

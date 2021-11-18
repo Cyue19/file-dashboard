@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
+import Button from "react-bootstrap/Button";
 const baseURL = "http://localhost:3001/files/";
 
 export default function SearchBar(props) {
@@ -40,9 +41,13 @@ export default function SearchBar(props) {
 
             <form onSubmit={(e) =>searchFiles(e)}>
                 <div className="input-group mb-3">
-                    <input type="text" className="form-control" name="fileName" onChange={(e) => onSearchKeyChanged(e)} placeholder="Search file name" />
-                    <button className="btn btn-outline-primary" type="submit">Search</button>
+                    <input type="text" className="input-group form-control" name="fileName" onChange={(e) => onSearchKeyChanged(e)} placeholder="Search file name" />
+                    {/* <button className="btn btn-outline-primary col-2" type="submit">Search</button> */}
+                    <Button variant="primary">Search</Button>
                 </div>
+                {/* <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button> */}
+                
+
             </form>
         </div>
     )

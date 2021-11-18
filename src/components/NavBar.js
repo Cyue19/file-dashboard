@@ -41,13 +41,13 @@ export default function NavBar(props) {
                     <li>
                         <Link to="/relays" className={"nav-link link-light " + (props.path==="/relays" ? "active":"")}>
                         {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> */}
-                        Relays
+                        Relays Overview
                         </Link>
                     </li>
                     <li>
                         <Link className="nav-link link-light">
                         {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> */}
-                        content
+                        Manage Relays
                         </Link>
                     </li>
                     <li>
