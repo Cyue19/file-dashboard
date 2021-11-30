@@ -44,18 +44,6 @@ export default function NavBar(props) {
                         Relays Overview
                         </Link>
                     </li>
-                    <li>
-                        <Link className="nav-link link-light">
-                        {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> */}
-                        Manage Relays
-                        </Link>
-                    </li>
-                    <li>
-                        <Link className="nav-link link-light">
-                        {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> */}
-                        content
-                        </Link>
-                    </li>
                     </ul>
                 </div>
 
