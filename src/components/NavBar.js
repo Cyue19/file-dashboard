@@ -20,10 +20,8 @@ export default function NavBar(props) {
             <div>
 
                 <div className="p-3 bg-dark mt-3 ms-3" style={{width: "100%", height:"100vh", borderRadius: "3px"}}>
-                    <Link className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
                     {/* <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> */}
                     <span className="">NAVIGATION</span>
-                    </Link>
                     <hr className="bg-light"/>
                     <ul className="nav nav-pills flex-column mb-auto">
                     <li className="nav-item" >
