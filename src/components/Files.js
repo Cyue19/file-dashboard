@@ -4,7 +4,7 @@ import axios from "axios";
 import FileWrapper from "./FileWrapper";
 import SearchBar from "./SearchBar";
 
-const baseURL = "http://localhost:3001/files/";
+const baseURL = "http://54.86.159.136/files/";
 
 export default function Files(props) {
 
