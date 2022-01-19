@@ -4,7 +4,7 @@ import axios from "axios";
 import FileWrapper from "./FileWrapper";
 import SearchBar from "./SearchBar";
 
-const baseURL = "http://54.86.159.136/files/";
+const baseURL = "https://api.remote.besic.org/files/";
 
 export default function Files(props) {
 

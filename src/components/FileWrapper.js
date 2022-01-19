@@ -4,7 +4,7 @@ import axios from "axios";
 
 import FileTable from "./FileTable";
 
-const baseURL = "http://54.86.159.136:3007/files/";
+const baseURL = "https:/api.remote.besic.org/files/";
 
 // const S3_BUCKET = "besi-c";
 
