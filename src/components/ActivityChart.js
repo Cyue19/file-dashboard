@@ -5,7 +5,7 @@ import { DateTime } from "luxon";
 import { MDBContainer } from "mdbreact";
 import { Line } from "react-chartjs-2";
 
-const baseURL = "https://api.remote.besic.org/files/byDate";
+const baseURL = "http://localhost:3001/files/byDate";
 
 const dataset = {
     labels: [],

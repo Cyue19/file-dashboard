@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { DateTime } from "luxon";
 
-const baseURL = "https://api.remote.besic.org/files/last";
+const baseURL = "http://localhost:3001/files/last";
 
 export default function LastUpload() {
     const [recent, setRecent] = useState(null);
