@@ -4,8 +4,8 @@ import axios from "axios";
 import { DateTime } from "luxon";
 import { MDBContainer } from "mdbreact";
 import { Line } from "react-chartjs-2";
-
-const baseURL = "http://localhost:3001/files/byDate";
+require("dotenv").config();
+const baseURL = process.env.REACT_APP_URL +"/files/byDate";
 
 const dataset = {
     labels: [],

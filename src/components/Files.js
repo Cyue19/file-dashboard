@@ -3,8 +3,8 @@ import axios from "axios";
 
 import FileWrapper from "./FileWrapper";
 import SearchBar from "./SearchBar";
-
-const baseURL = "http://localhost:3001/files/";
+require("dotenv").config();
+const baseURL = process.env.REACT_APP_URL +"/files/";
 
 export default function Files(props) {
 
