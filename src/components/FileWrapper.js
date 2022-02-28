@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 
 import FileTable from "./FileTable";
-
-const baseURL = "http://localhost:3001/files/";
+require("dotenv").config();
+const baseURL = process.env.REACT_APP_URL +"/files/";
 
 // const S3_BUCKET = "besi-c";
 
