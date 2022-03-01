@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 import { DateTime } from "luxon";
-
-const baseURL = "https://api.remote.besic.org/files/last";
+require("dotenv").config();
+const baseURL = process.env.REACT_APP_URL +"/files/last";
 
 export default function LastUpload() {
     const [recent, setRecent] = useState(null);

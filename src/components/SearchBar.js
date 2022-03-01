@@ -3,7 +3,10 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
 import Button from "react-bootstrap/Button";
+require("dotenv").config();
+
 const searchURL = "http://localhost:3001/files/search/";
+const baseURL = process.env.REACT_APP_URL+"/files/";
 
 export default function SearchBar(props) {
 

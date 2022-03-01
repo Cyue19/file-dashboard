@@ -1,8 +1,6 @@
 import FileWrapper from "./FileWrapper";
 import SearchBar from "./SearchBar";
-
-// const baseURL = "https://api.remote.besic.org/files/";
-const baseURL = "http://localhost:3001/files";
+require("dotenv").config();
 
 export default function Files(props) {
 

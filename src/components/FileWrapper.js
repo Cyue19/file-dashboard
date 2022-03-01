@@ -3,8 +3,13 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 
 import FileTable from "./FileTable";
+// require("dotenv").config({path: "../../.env"});
+//console.log(require("dotenv").config());
+require("dotenv").config()
 
-const baseURL = "https://api.remote.besic.org/files/";
+//const baseURL = process.env.REACT_APP_URL +"/files/";
+const baseURL = "http://localhost:3001/files/";
+console.log(process.env.REACT_APP_URL);
 
 export default function FileWrapper(props){
 
@@ -26,9 +31,9 @@ export default function FileWrapper(props){
 
     async function getCount() {
       var url = baseURL + "count";
-      console.log(url);
+      //console.log(url);
       const response = await axios.get(url);
-      console.log(response);
+      //console.log(response);
     }
 
     return (
