@@ -42,6 +42,13 @@ export default function NavBar(props) {
                         Relays Overview
                         </Link>
                     </li>
+
+                    <li>
+                        <Link to="/responses" className={"nav-link link-light " + (props.path==="/responses" ? "active":"")}>
+                        {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> */}
+                        Responses
+                        </Link>
+                    </li>
                     </ul>
                 </div>
 
