@@ -5,6 +5,7 @@ import axios from "axios";
 import FileTable from "./FileTable";
 require("dotenv").config();
 const baseURL = process.env.REACT_APP_URL +"/files/";
+console.log(process.env.REACT_APP_URL)
 
 // const S3_BUCKET = "besi-c";
 

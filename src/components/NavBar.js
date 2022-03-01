@@ -21,7 +21,7 @@ export default function NavBar(props) {
 
                 <div className="p-3 bg-dark mt-3 ms-3" style={{width: "100%", height:"100vh", borderRadius: "3px"}}>
                     {/* <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> */}
-                    <span className="">NAVIGATION</span>
+                    <span className=""></span>
                     <hr className="bg-light"/>
                     <ul className="nav nav-pills flex-column mb-auto">
                     <li className="nav-item" >
