@@ -4,7 +4,7 @@ import axios from "axios";
 import { MDBContainer } from "mdbreact";
 import { Bar } from "react-chartjs-2";
 require("dotenv").config();
-const followUpQ1URL = process.env.REACT_APP_URL +"/responses/follow_up/q1";
+const EndOfDayQ1URL = process.env.REACT_APP_URL +"/responses/end_of_day/q1";
 
 const dataset = {
     labels: [],
@@ -19,7 +19,7 @@ const dataset = {
     ]
   }
 
-export default function FollowUpQ1Chart() {
+export default function EndOfDayQ1Chart() {
     const [recent, setRecent] = useState(null);
     const [state, dispatch] = useReducer(reducer, dataset)
   
@@ -29,14 +29,14 @@ export default function FollowUpQ1Chart() {
   
     useEffect(() => {
       try {
-        getFollowUpQ1();
+        getEndOfDayQ1();
       } catch (err) {
         console.log(err);
       }
     }, []);
   
-    async function getFollowUpQ1() {
-      const response = await axios.get(followUpQ1URL);
+    async function getEndOfDayQ1() {
+      const response = await axios.get(EndOfDayQ1URL);
       console.log(response.data);
       const xAxis = [];
       const yAxis = [];
@@ -54,7 +54,7 @@ export default function FollowUpQ1Chart() {
   
     return (
       <MDBContainer>
-        Question 1 from Follow-up Responses
+        Question 1 from End-of-day Responses
         <Bar
           data={state}
           options={{ legend: { display: false } }}
