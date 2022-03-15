@@ -23,6 +23,7 @@ export default function Responses(props) {
                         </div>
                         <div className="col-3">
                             <div className="form-card">
+                                <b>Last Uploaded:</b>
                                 <LastUpload type="pain" endPoint="/responses/pain/last"/>
                             </div>
                         </div>
@@ -40,7 +41,8 @@ export default function Responses(props) {
                     <div className="col-3">
                             <div className="form-card mt-3">
                             <b>Last Uploaded:</b>
-                            <FollowUpRecent/>
+                            {/* <FollowUpRecent/> */}
+                            <LastUpload type="followUp" endPoint="/responses/follow_up/last" />
                             </div>
                     </div>
                 </div>
@@ -55,7 +57,8 @@ export default function Responses(props) {
                     <div className="col-3">
                         <div className="form-card mt-3">
                             <b>Last Uploaded:</b>
-                            <EndOfDayRecent/>
+                            {/* <EndOfDayRecent/> */}
+                            <LastUpload type="eod" endPoint="/responses/end_of_day/last" />
                         </div>
                     </div>
                 </div>
