@@ -18,7 +18,7 @@ export default function Responses(props) {
                     <div className="row">
                         <div className="col-9 p-0">
                             <div className="form-card">
-                                <BarChart/>
+                                <BarChart type="pain" endPoint="/responses/pain/counts" />
                             </div>
                         </div>
                         <div className="col-3">
@@ -33,7 +33,8 @@ export default function Responses(props) {
                     <h5 className="mt-3">Follow-up Responses</h5>
                     <div className="col-9" style={{padding: "0px 15px"}}>
                         <div className="form-card my-3" style={{margin: "0", width: "55vw"}}>
-                            <FollowUpQ1Chart/>
+                            {/* <FollowUpQ1Chart/> */}
+                            <BarChart type="followUp" endPoint="/responses/follow_up/q1" />
                         </div>
                     </div>
                     <div className="col-3">
@@ -47,14 +48,15 @@ export default function Responses(props) {
                     <h5 className="mt-3">End-of-day Responses</h5>
                     <div className="col-9" style={{padding: "0px 15px"}}>
                         <div className="form-card my-3" style={{margin: "0", width: "55vw"}}>
-                        <EndOfDayQ1Chart/>
+                        {/* <EndOfDayQ1Chart/> */}
+                            <BarChart type="eod" endPoint="/responses/end_of_day/q1" />
                         </div>
                     </div>
                     <div className="col-3">
-                            <div className="form-card mt-3">
+                        <div className="form-card mt-3">
                             <b>Last Uploaded:</b>
                             <EndOfDayRecent/>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

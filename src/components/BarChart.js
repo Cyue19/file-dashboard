@@ -4,7 +4,6 @@ import axios from "axios";
 import { MDBContainer } from "mdbreact";
 import { Bar } from "react-chartjs-2";
 require("dotenv").config();
-const endPoint = process.env.REACT_APP_URL +"/responses/pain/counts";
 
 const dataset = {
     labels: [],
@@ -19,9 +18,9 @@ const dataset = {
     ]
   }
 
-export default function EndOfDayQ1Chart() {
-    const [recent, setRecent] = useState(null);
+export default function BarChart(props) {
     const [state, dispatch] = useReducer(reducer, dataset)
+    const endPoint = process.env.REACT_APP_URL + props.endPoint;
   
     function reducer(state, {key, value}) {
       return Object.assign({}, state, {[key]: value});
@@ -29,23 +28,47 @@ export default function EndOfDayQ1Chart() {
   
     useEffect(() => {
       try {
-        getEndOfDayQ1();
+        getPainCounts();
       } catch (err) {
         console.log(err);
       }
     }, []);
   
-    async function getEndOfDayQ1() {
+    async function getPainCounts() {
       const response = await axios.get(endPoint);
       console.log(response.data);
       const xAxis = [];
       const yAxis = [];
-      response.data.forEach(element => {
-          if(element.questionOneAnswer != null){
-              xAxis.push(element.questionOneAnswer);
-              yAxis.push(element.count);
-          }
-      });
+
+      switch (props.type) {
+        case "pain":
+            response.data.forEach(element => {
+                if(element.questionOneAnswer != null){
+                    xAxis.push(element.questionOneAnswer);
+                    yAxis.push(element.count);
+                }
+            });
+            break;
+        case "eod":
+            response.data.forEach(element => {
+                if(element.question1 != null){
+                    xAxis.push(element.question1);
+                    yAxis.push(element.count);
+                }
+            });
+            break;
+        case "followUp":
+            response.data.forEach(element => {
+                if(element.question1 != null){
+                    xAxis.push(element.question1);
+                    yAxis.push(element.count);
+                }
+            });
+            break;
+        default:
+            break;
+      }
+
       xAxis.reverse();
       yAxis.reverse();
       dispatch({key: "labels", value: xAxis});
@@ -54,7 +77,7 @@ export default function EndOfDayQ1Chart() {
   
     return (
       <MDBContainer>
-        Question 1 from End-of-day Responses
+        Question 1 Answers
         <Bar
           data={state}
           options={{ legend: { display: false } }}
