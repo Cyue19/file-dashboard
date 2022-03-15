@@ -3,6 +3,8 @@ import FollowUpRecent from "./FollowUpRecent";
 import FollowUpQ1Chart from "./FollowUpQ1";
 import EndOfDayRecent from "./EndOfDayRecent";
 import EndOfDayQ1Chart from "./EndOfDayQ1";
+import LastUpload from "./LastUpload";
+import BarChart from "./BarChart";
 export default function Responses(props) {
 
     props.setPath("/responses");
@@ -12,6 +14,19 @@ export default function Responses(props) {
                 <h3 className="mt-3">Responses</h3>
                 <div>
                     <h5 className="mt-3">Pain Responses</h5>
+
+                    <div className="row">
+                        <div className="col-9 p-0">
+                            <div className="form-card">
+                                <BarChart/>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="form-card">
+                                <LastUpload type="pain" endPoint="/responses/pain/last"/>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <div>
