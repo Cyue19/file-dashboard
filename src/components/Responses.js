@@ -17,7 +17,7 @@ export default function Responses(props) {
                                 <BarChart type="pain" endPoint="/responses/pain/counts" />
                             </div>
                         </div>
-                        
+
                         <div className="col-md-3">
                             <div className="form-card">
                                 <b>Last Uploaded:</b>
@@ -48,7 +48,7 @@ export default function Responses(props) {
                 <div>
                     <h5 className="mt-3">End-of-day Responses</h5>
 
-                    <div className="row">
+                    <div className="row mb-4">
                         <div className="col-9" style={{padding: "0px 15px"}}>
                             <div className="form-card" style={{margin: "0", width: "55vw"}}>
                                 <BarChart type="eod" endPoint="/responses/end_of_day/q1" />
