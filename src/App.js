@@ -11,6 +11,7 @@ import DashBoard from "./components/DashBoard";
 import Files from "./components/Files";
 import Relays from "./components/Relays";
 import SearchResults from "./components/SearchResults";
+import Responses from "./components/Responses";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <PropsRoute path="/files" exact component={Files} setPath={setPath}/>
             <PropsRoute path="/relays" exact component={Relays} setPath={setPath}/>
             <PropsRoute path="/files/search" exact component={SearchResults} />
+            <PropsRoute path="/responses" exact component={Responses} setPath={setPath}/>
           </div>
         </div>
       </BrowserRouter>
