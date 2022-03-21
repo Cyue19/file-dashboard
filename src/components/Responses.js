@@ -1,13 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from 'react';
+import axios from "axios";
 import LastUpload from "./LastUpload";
 import BarChart from "./BarChart";
+
+const endPoint = process.env.REACT_APP_URL +"/responses/deployments";
 
 export default function Responses(props) {
 
     props.setPath("/responses");
     const [selDeployment, setSelDeployment] = useState(0);
-    const deployments = [0, 1, 2, 3, 4, 5, 6]
+    const [deployments, setDeployments] = useState([]);
+
+    useEffect(() => {
+        try {
+          getDeployments();
+        } catch(err) {
+          console.log(err);
+        }
+      }, []);
+
+    async function getDeployments() {
+        const response = await axios.get(endPoint);
+        setDeployments(response.data);
+        console.log(response.data);
+    }
 
     function onDeploymentChanged(e) {
         setSelDeployment(e.target.value);
@@ -18,7 +35,7 @@ export default function Responses(props) {
                 <h3 className="mt-3">Responses</h3>
                 <select class="form-select" onChange={(e) => onDeploymentChanged(e)} aria-label="Default select example">
                     {deployments.map((deployment) => (
-                        <option value={deployment} className={selDeployment===deployment ? "selected":""}>{deployment}</option>
+                        <option value={deployment.painResponseDeployment} className={selDeployment===deployment.painResponseDeployment ? "selected":""}>{deployment.painResponseDeployment}</option>
                     ))}
                 </select>
 
