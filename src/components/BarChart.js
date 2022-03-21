@@ -20,7 +20,7 @@ const dataset = {
 
 export default function BarChart(props) {
     const [state, dispatch] = useReducer(reducer, dataset)
-    const endPoint = process.env.REACT_APP_URL + props.endPoint;
+    const endPoint = process.env.REACT_APP_URL + props.endPoint + "/" + props.deployment;
   
     function reducer(state, {key, value}) {
       return Object.assign({}, state, {[key]: value});
@@ -28,13 +28,13 @@ export default function BarChart(props) {
   
     useEffect(() => {
       try {
-        getPainCounts();
+        getCounts();
       } catch (err) {
         console.log(err);
       }
     }, []);
   
-    async function getPainCounts() {
+    async function getCounts() {
       const response = await axios.get(endPoint);
       console.log(response.data);
       const xAxis = [];
