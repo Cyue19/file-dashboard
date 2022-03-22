@@ -3,6 +3,7 @@ import React from 'react';
 import axios from "axios";
 import LastUpload from "./LastUpload";
 import BarChart from "./BarChart";
+import ResponseModal from "./ResponseModal";
 
 const endPoint = process.env.REACT_APP_URL +"/responses/deployments";
 
@@ -56,6 +57,8 @@ export default function Responses(props) {
                                 <b>Last Uploaded:</b>
                                 <LastUpload type="pain" endPoint="/responses/pain/last" deployment = {selDeployment} />
                             </div>
+
+                            <ResponseModal endPoint = "responses/pain/" deployment = {selDeployment} />
                         </div>
                     </div>
                 </div>
