@@ -28,6 +28,7 @@ export default function Responses(props) {
 
     function onDeploymentChanged(e) {
         setSelDeployment(e.target.value);
+        console.log(selDeployment);
     }
 
         return (
@@ -38,6 +39,7 @@ export default function Responses(props) {
                         <option value={deployment.painResponseDeployment} className={selDeployment===deployment.painResponseDeployment ? "selected":""}>{deployment.painResponseDeployment}</option>
                     ))}
                 </select>
+                {selDeployment}
 
                 <div>
                     <h5 className="mt-3">Pain Responses</h5>
@@ -45,14 +47,14 @@ export default function Responses(props) {
                     <div className="row">
                         <div className="col-md-9" style={{padding: "0px 15px"}}>
                             <div className="form-card" style={{margin: "0", width: "55vw"}}>
-                                <BarChart type="pain" endPoint="/responses/pain/counts" deployment = "1" />
+                                <BarChart type="pain" endPoint="/responses/pain/counts" deployment = {selDeployment} />
                             </div>
                         </div>
 
                         <div className="col-md-3">
                             <div className="form-card">
                                 <b>Last Uploaded:</b>
-                                <LastUpload type="pain" endPoint="/responses/pain/last" deployment = "1" />
+                                <LastUpload type="pain" endPoint="/responses/pain/last" deployment = {selDeployment} />
                             </div>
                         </div>
                     </div>

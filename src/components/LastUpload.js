@@ -14,7 +14,7 @@ export default function LastUpload(props) {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [props.deployment]);
 
   async function getRecent() {
     const response = await axios.get(endPoint);
