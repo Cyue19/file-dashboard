@@ -58,7 +58,7 @@ export default function Responses(props) {
                                 <LastUpload type="pain" endPoint="/responses/pain/last" deployment = {selDeployment} />
                             </div>
 
-                            <ResponseModal endPoint = "responses/pain/" deployment = {selDeployment} />
+                            <ResponseModal type="pain" endPoint="/responses/pain/" deployment = {selDeployment} />
                         </div>
                     </div>
                 </div>

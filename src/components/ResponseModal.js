@@ -10,10 +10,20 @@ require("dotenv").config()
 export default function ResponseModal(props) {
     const [files, setFiles] = useState([]);
 
+    useEffect(() => {
+        try {
+          getFiles();
+        } catch (err) {
+          console.log(err);
+        }
+      }, [props.deployment]);
+
     async function getFiles() {
-        const endPoint = process.env.REACT_APP_URL + props.endPoint;
-        const response = axios.get(endPoint);
-        setFiles(response);
+        const endPoint = process.env.REACT_APP_URL + props.endPoint + props.deployment;
+        console.log(endPoint);
+        const response = await axios.get(endPoint);
+        console.log(response.data);
+        setFiles(response.data);
     }
 
     return (
@@ -34,7 +44,6 @@ export default function ResponseModal(props) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                     </div>
                 </div>
