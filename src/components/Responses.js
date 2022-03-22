@@ -69,14 +69,14 @@ export default function Responses(props) {
                     <div className="row">
                         <div className="col-9" style={{padding: "0px 15px"}}>
                             <div className="form-card" style={{margin: "0", width: "55vw"}}>
-                                <BarChart type="followUp" endPoint="/responses/follow_up/q1" deployment=""/>
+                                <BarChart type="followUp" endPoint="/responses/follow_up/q1" deployment={selDeployment} />
                             </div>
                         </div>
 
                         <div className="col-3">
                             <div className="form-card mt-3">
                                 <b>Last Uploaded:</b>
-                                <LastUpload type="followUp" endPoint="/responses/follow_up/last" deployment=""/>
+                                <LastUpload type="followUp" endPoint="/responses/follow_up/last" deployment={selDeployment} />
                             </div>
                         </div>
                     </div>
@@ -88,14 +88,14 @@ export default function Responses(props) {
                     <div className="row mb-4">
                         <div className="col-9" style={{padding: "0px 15px"}}>
                             <div className="form-card" style={{margin: "0", width: "55vw"}}>
-                                <BarChart type="eod" endPoint="/responses/end_of_day/q1" deployment=""/>
+                                <BarChart type="eod" endPoint="/responses/end_of_day/q1" deployment={selDeployment} />
                             </div>
                         </div>
 
                         <div className="col-3">
                             <div className="form-card mt-3">
                                 <b>Last Uploaded:</b>
-                                <LastUpload type="eod" endPoint="/responses/end_of_day/last" deployment=""/>
+                                <LastUpload type="eod" endPoint="/responses/end_of_day/last" deployment={selDeployment} />
                             </div>
                         </div>
                     </div>
