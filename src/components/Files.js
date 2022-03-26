@@ -14,7 +14,7 @@ export default function Files(props) {
 
                 <div className="container mt-3 form-card">
                     All Files
-                    <FileWrapper />
+                    <FileWrapper type="files"/>
                 </div>
             </div>
         )

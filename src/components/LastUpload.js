@@ -6,7 +6,7 @@ require("dotenv").config();
 
 export default function LastUpload(props) {
   const [recent, setRecent] = useState(null);
-  const baseURL = process.env.REACT_APP_URL + props.endPoint;
+  const endPoint = process.env.REACT_APP_URL + props.endPoint + "/" + props.deployment;
 
   useEffect(() => {
     try {
@@ -14,10 +14,10 @@ export default function LastUpload(props) {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [props.deployment]);
 
   async function getRecent() {
-    const response = await axios.get(baseURL);
+    const response = await axios.get(endPoint);
     console.log(response.data);
     setRecent(response.data);
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 
 import axios from "axios";
 import { MDBContainer } from "mdbreact";
@@ -9,7 +9,7 @@ const dataset = {
     labels: [],
     datasets: [
       {
-        label: 'Pain Responses',
+        label: 'Responses',
         backgroundColor: 'rgba(75,192,192,1)',
         borderColor: 'rgba(0,0,0,1)',
         borderWidth: 2,
@@ -20,21 +20,23 @@ const dataset = {
 
 export default function BarChart(props) {
     const [state, dispatch] = useReducer(reducer, dataset)
-    const endPoint = process.env.REACT_APP_URL + props.endPoint;
   
     function reducer(state, {key, value}) {
       return Object.assign({}, state, {[key]: value});
-  }
+    }
   
     useEffect(() => {
       try {
-        getPainCounts();
+        getCounts();
       } catch (err) {
         console.log(err);
       }
-    }, []);
+    }, [props.deployment]);
   
-    async function getPainCounts() {
+    async function getCounts() {
+      var endPoint = process.env.REACT_APP_URL + props.endPoint + "/" + props.deployment;
+      console.log(props.type);
+      console.log(endPoint);
       const response = await axios.get(endPoint);
       console.log(response.data);
       const xAxis = [];

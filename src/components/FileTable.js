@@ -62,6 +62,72 @@ export default function FileTable(props) {
     );
   }
 
+  function getResponseFiles() {
+    switch (props.type) {
+      case "pain":
+        return (
+          props.files.slice(0, 10).map((file) => (
+          <tr key={file.idPainResponses}>
+            <td>{file.idPainResponses}</td>
+            <td>{file.questionOneAnswer}</td>
+            <td>
+                {DateTime.fromISO(file.time).toLocaleString(
+                  DateTime.DATETIME_MED
+                )}
+              </td>
+          </tr>
+          ))
+        );
+      case "eod":
+        return (
+          props.files.slice(0, 10).map((file) => (
+          <tr key={file.idEnd_Of_Day_Responses}>
+            <td>{file.idEnd_Of_Day_Responses}</td>
+            <td>{file.question1}</td>
+            <td>
+                {DateTime.fromISO(file.time).toLocaleString(
+                  DateTime.DATETIME_MED
+                )}
+              </td>
+          </tr>
+          ))
+        );
+      case "followUp":
+        return (
+          props.files.slice(0, 10).map((file) => (
+          <tr key={file.idFollow_Up}>
+            <td>{file.idFollow_Up}</td>
+            <td>{file.question1}</td>
+            <td>
+                {DateTime.fromISO(file.time).toLocaleString(
+                  DateTime.DATETIME_MED
+                )}
+              </td>
+          </tr>
+          ))
+        );
+      default:
+        break;
+    }
+  }
+
+  function getFiles() {
+    switch (props.type) {
+      case "recent":
+        return getRecentFiles();
+      case "files":
+        return getAllFiles();
+      case "pain":
+        return getResponseFiles();
+      case "eod":
+        return getResponseFiles();
+      case "followUp":
+        return getResponseFiles();
+      default:
+        break;
+    }
+  }
+
   var lastPage = getTotalPages();
 
   return (
@@ -72,19 +138,24 @@ export default function FileTable(props) {
         <div>
           <table className="table table-hover table-sm">
             <thead>
+              {props.type==="recent" || props.type==="files" ?
+                <tr>
+                  <th scope="col">File Name</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Date Uploaded</th>
+                  <th scope="col">Size</th>
+                  <th scope="col"></th>
+                </tr>
+              :
               <tr>
-                <th scope="col">File Name</th>
-                <th scope="col">Location</th>
-                <th scope="col">Date Uploaded</th>
-                <th scope="col">Size</th>
-                <th scope="col"></th>
+                <th scope="col">ID</th>
+                <th scope="col">Answer</th>
+                <th scope="col">Time</th>
               </tr>
+              }
             </thead>
             <tbody>
-              {props.type==="recent" ?
-              getRecentFiles()
-              :
-              getAllFiles()}
+              {getFiles()}
             </tbody>
           </table>
           {props.type==="recent" ?
