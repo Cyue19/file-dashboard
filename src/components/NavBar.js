@@ -16,12 +16,13 @@ export default function NavBar(props) {
     // }
 
     // render() {
+
         return (
             <div>
-
-                <div className="p-3 bg-dark mt-3 ms-3" style={{width: "100%", height:"100vh", borderRadius: "3px"}}>
+                
+                <div className="p-3 bg-dark mt-3 ms-3" style={{height:"100vh", borderRadius: "3px"}}>
                     {/* <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> */}
-                    <span className=""></span>
+                    
                     <hr className="bg-light"/>
                     <ul className="nav nav-pills flex-column mb-auto">
                     <li className="nav-item" >
@@ -30,20 +31,20 @@ export default function NavBar(props) {
                         Dashboard
                         </Link>
                     </li>
-                    <li>
+                    <li className="nav-item">
                         <Link to="/files" className={"nav-link link-light " + (props.path==="/files" ? "active":"")}>
                         {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> */}
                         Files
                         </Link>
                     </li>
-                    <li>
+                    <li className="nav-item">
                         <Link to="/relays" className={"nav-link link-light " + (props.path==="/relays" ? "active":"")}>
                         {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> */}
                         Relays Overview
                         </Link>
                     </li>
 
-                    <li>
+                    <li className="nav-item">
                         <Link to="/responses" className={"nav-link link-light " + (props.path==="/responses" ? "active":"")}>
                         {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> */}
                         Responses

@@ -9,10 +9,10 @@ const dataset = {
     labels: [],
     datasets: [
       {
-        label: 'Pain Responses',
-        backgroundColor: 'rgba(75,192,192,1)',
-        borderColor: 'rgba(0,0,0,1)',
-        borderWidth: 2,
+        label: [],
+        backgroundColor: 'rgba(25, 181, 254, 0.75)',
+        borderColor: 'rgba(0,0,0,0.25)',
+        borderWidth: 1,
         data: [],
       }
     ]
@@ -39,6 +39,7 @@ export default function BarChart(props) {
       console.log(response.data);
       const xAxis = [];
       const yAxis = [];
+      const res = [];
 
       switch (props.type) {
         case "pain":
@@ -48,6 +49,7 @@ export default function BarChart(props) {
                     yAxis.push(element.count);
                 }
             });
+            res.push("Pain Response");
             break;
         case "eod":
             response.data.forEach(element => {
@@ -56,6 +58,7 @@ export default function BarChart(props) {
                     yAxis.push(element.count);
                 }
             });
+            res.push("End of Day Response");
             break;
         case "followUp":
             response.data.forEach(element => {
@@ -64,6 +67,7 @@ export default function BarChart(props) {
                     yAxis.push(element.count);
                 }
             });
+            res.push("Follow Up Response");
             break;
         default:
             break;
@@ -72,7 +76,7 @@ export default function BarChart(props) {
       xAxis.reverse();
       yAxis.reverse();
       dispatch({key: "labels", value: xAxis});
-      dispatch({key: "datasets", value: [Object.assign({}, state.datasets[0] ?? {}, {data: yAxis})]});
+      dispatch({key: "datasets", value: [Object.assign({}, state.datasets[0] ?? {}, {data: yAxis,label:res})]});
   }
   
     return (

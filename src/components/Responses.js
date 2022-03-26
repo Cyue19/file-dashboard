@@ -13,7 +13,7 @@ export default function Responses(props) {
 
                     <div className="row">
                         <div className="col-md-9" style={{padding: "0px 15px"}}>
-                            <div className="form-card" style={{margin: "0", width: "55vw"}}>
+                            <div className="form-card" style={{margin: "0", width: "100%"}}>
                                 <BarChart type="pain" endPoint="/responses/pain/counts" />
                             </div>
                         </div>
@@ -23,6 +23,10 @@ export default function Responses(props) {
                                 <b>Last Uploaded:</b>
                                 <LastUpload type="pain" endPoint="/responses/pain/last"/>
                             </div>
+                            <div className="mt-2">
+                                <button type="button" className="btn btn-outline-primary">Show Table</button>
+                            </div>
+                            
                         </div>
                     </div>
 
@@ -32,15 +36,18 @@ export default function Responses(props) {
 
                     <div className="row">
                         <div className="col-9" style={{padding: "0px 15px"}}>
-                            <div className="form-card" style={{margin: "0", width: "55vw"}}>
+                            <div className="form-card" style={{margin: "0", width: "100%"}}>
                                 <BarChart type="followUp" endPoint="/responses/follow_up/q1" />
                             </div>
                         </div>
 
-                        <div className="col-3">
+                        <div className="col-md-3">
                             <div className="form-card mt-3">
                                 <b>Last Uploaded:</b>
                                 <LastUpload type="followUp" endPoint="/responses/follow_up/last" />
+                            </div>
+                            <div className="mt-2">
+                                <button type="button" className="btn btn-outline-primary">Show Table</button>
                             </div>
                         </div>
                     </div>
@@ -50,15 +57,18 @@ export default function Responses(props) {
 
                     <div className="row">
                         <div className="col-9" style={{padding: "0px 15px"}}>
-                            <div className="form-card" style={{margin: "0", width: "55vw"}}>
+                            <div className="form-card" style={{margin: "0", width: "100%"}}>
                                 <BarChart type="eod" endPoint="/responses/end_of_day/q1" />
                             </div>
                         </div>
 
-                        <div className="col-3">
+                        <div className="col-md-3">
                             <div className="form-card mt-3">
                                 <b>Last Uploaded:</b>
                                 <LastUpload type="eod" endPoint="/responses/end_of_day/last" />
+                            </div>
+                            <div className="mt-2">
+                                <button type="button" className="btn btn-outline-primary">Show Table</button>
                             </div>
                         </div>
                     </div>
