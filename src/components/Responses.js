@@ -53,12 +53,13 @@ export default function Responses(props) {
                         </div>
 
                         <div className="col-md-3">
-                            <div className="form-card">
+                            <div className="form-card mb-3">
                                 <b>Last Uploaded:</b>
                                 <LastUpload type="pain" endPoint="/responses/pain/last" deployment = {selDeployment} />
                             </div>
-
-                            <ResponseModal type="pain" endPoint="/responses/pain/" deployment = {selDeployment} />
+                            <div style={{margin: "auto"}}>
+                                <ResponseModal type="pain" endPoint="/responses/pain/" deployment = {selDeployment} />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -74,10 +75,12 @@ export default function Responses(props) {
                         </div>
 
                         <div className="col-3">
-                            <div className="form-card mt-3">
+                            <div className="form-card mb-3">
                                 <b>Last Uploaded:</b>
                                 <LastUpload type="followUp" endPoint="/responses/follow_up/last" deployment={selDeployment} />
                             </div>
+
+                            <ResponseModal type="followUp" endPoint="/responses/follow_up/" deployment = {selDeployment} />
                         </div>
                     </div>
                 </div>
@@ -93,10 +96,11 @@ export default function Responses(props) {
                         </div>
 
                         <div className="col-3">
-                            <div className="form-card mt-3">
+                            <div className="form-card mb-3">
                                 <b>Last Uploaded:</b>
                                 <LastUpload type="eod" endPoint="/responses/end_of_day/last" deployment={selDeployment} />
                             </div>
+                            <ResponseModal type="eod" endPoint="/responses/end_of_day/" deployment = {selDeployment} />
                         </div>
                     </div>
                 </div>

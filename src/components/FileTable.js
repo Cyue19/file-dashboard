@@ -62,22 +62,53 @@ export default function FileTable(props) {
     );
   }
 
-  function getPainFiles() {
-    console.log("painfiles");
-    console.log(props.files);
-    return (
-      props.files.slice(0, 10).map((file) => (
-      <tr key={file.idPainResponses}>
-        <td>{file.idPainResponses}</td>
-        <td>{file.questionOneAnswer}</td>
-        <td>
-            {DateTime.fromISO(file.time).toLocaleString(
-              DateTime.DATETIME_MED
-            )}
-          </td>
-      </tr>
-      ))
-    );
+  function getResponseFiles() {
+    switch (props.type) {
+      case "pain":
+        return (
+          props.files.slice(0, 10).map((file) => (
+          <tr key={file.idPainResponses}>
+            <td>{file.idPainResponses}</td>
+            <td>{file.questionOneAnswer}</td>
+            <td>
+                {DateTime.fromISO(file.time).toLocaleString(
+                  DateTime.DATETIME_MED
+                )}
+              </td>
+          </tr>
+          ))
+        );
+      case "eod":
+        return (
+          props.files.slice(0, 10).map((file) => (
+          <tr key={file.idEnd_Of_Day_Responses}>
+            <td>{file.idEnd_Of_Day_Responses}</td>
+            <td>{file.question1}</td>
+            <td>
+                {DateTime.fromISO(file.time).toLocaleString(
+                  DateTime.DATETIME_MED
+                )}
+              </td>
+          </tr>
+          ))
+        );
+      case "followUp":
+        return (
+          props.files.slice(0, 10).map((file) => (
+          <tr key={file.idFollow_Up}>
+            <td>{file.idFollow_Up}</td>
+            <td>{file.question1}</td>
+            <td>
+                {DateTime.fromISO(file.time).toLocaleString(
+                  DateTime.DATETIME_MED
+                )}
+              </td>
+          </tr>
+          ))
+        );
+      default:
+        break;
+    }
   }
 
   function getFiles() {
@@ -87,7 +118,11 @@ export default function FileTable(props) {
       case "files":
         return getAllFiles();
       case "pain":
-        return getPainFiles();
+        return getResponseFiles();
+      case "eod":
+        return getResponseFiles();
+      case "followUp":
+        return getResponseFiles();
       default:
         break;
     }
