@@ -33,21 +33,20 @@ export default function Responses(props) {
     }
 
         return (
-            <div className="container">
+            <div className="container px-4 m-0">
                 <h3 className="mt-3">Responses</h3>
                 <select class="form-select" onChange={(e) => onDeploymentChanged(e)} aria-label="Default select example">
                     {deployments.map((deployment) => (
                         <option value={deployment.painResponseDeployment} className={selDeployment===deployment.painResponseDeployment ? "selected":""}>{deployment.painResponseDeployment}</option>
                     ))}
                 </select>
-                {selDeployment}
 
                 <div>
                     <h5 className="mt-3">Pain Responses</h5>
 
                     <div className="row">
                         <div className="col-md-9" style={{padding: "0px 15px"}}>
-                            <div className="form-card" style={{margin: "0", width: "100%"}}>
+                            <div className="form-card mb-3" style={{margin: "0", width: "100%"}}>
                                 <BarChart type="pain" endPoint="/responses/pain/counts" deployment = {selDeployment} />
                             </div>
                         </div>
@@ -67,7 +66,7 @@ export default function Responses(props) {
 
                     <div className="row">
                         <div className="col-9" style={{padding: "0px 15px"}}>
-                            <div className="form-card" style={{margin: "0", width: "100%"}}>
+                            <div className="form-card mb-3" style={{margin: "0", width: "100%"}}>
                                 <BarChart type="followUp" endPoint="/responses/follow_up/q1" deployment={selDeployment} />
                             </div>
                         </div>
@@ -88,7 +87,7 @@ export default function Responses(props) {
 
                     <div className="row mb-4">
                         <div className="col-9" style={{padding: "0px 15px"}}>
-                            <div className="form-card" style={{margin: "0", width: "100%"}}>
+                            <div className="form-card mb-3" style={{margin: "0", width: "100%"}}>
                                 <BarChart type="eod" endPoint="/responses/end_of_day/q1" deployment={selDeployment} />
                             </div>
                         </div>

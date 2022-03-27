@@ -35,10 +35,8 @@ export default function BarChart(props) {
   
     async function getCounts() {
       var endPoint = process.env.REACT_APP_URL + props.endPoint + "/" + props.deployment;
-      console.log(props.type);
-      console.log(endPoint);
       const response = await axios.get(endPoint);
-      console.log(response.data);
+
       const xAxis = [];
       const yAxis = [];
       const res = [];

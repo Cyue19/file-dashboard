@@ -10,10 +10,10 @@ export default function DashBoard(props) {
     props.setPath("/");
 
         return (
-            <div className="container">
+            <div className="container px-4 m-0">
                 <h3 className="mt-3">DashBoard:</h3>
                 <div className="row">
-                    <div className="col-md-9" style={{padding: "0px 15px"}}>
+                    <div className="col-md-9">
                         <div className="form-card" style={{margin: "0"}}>
                             <ActivityChart />
                         </div>

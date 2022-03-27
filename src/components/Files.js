@@ -7,7 +7,7 @@ export default function Files(props) {
     props.setPath("/files");
 
         return(
-            <div className="container">
+            <div className="container px-4 m-0">
                 <h3 className="mt-3">Files:</h3>
 
                 <SearchBar />

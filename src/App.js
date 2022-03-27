@@ -21,11 +21,11 @@ function App() {
     return(
       <BrowserRouter>
         <Header/>
-        <div className="row">
-          <div className="col-2 me-3">
+        <div className="row m-0">
+          <div className="col-2">
             <NavBar path={path}/>
           </div>
-          <div className="col-9" style={{padding: "0"}}>
+          <div className="col-10 m-0" style={{padding: "0"}}>
             <PropsRoute path="/" exact component={DashBoard} setPath={setPath}/>
             <PropsRoute path="/files" exact component={Files} setPath={setPath}/>
             <PropsRoute path="/relays" exact component={Relays} setPath={setPath}/>

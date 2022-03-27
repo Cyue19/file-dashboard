@@ -27,7 +27,7 @@ export default function ResponseModal(props) {
     }
 
     return (
-        <div>
+        <div style={{"text-align": "center"}}>
             <button style={{margin: "auto"}} type="button" class="mt-3 btn btn-outline-primary" data-bs-toggle="modal" data-bs-target={"#" + props.type + "Modal"}>
                 See Responses
             </button>
