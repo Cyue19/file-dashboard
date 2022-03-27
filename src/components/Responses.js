@@ -33,7 +33,7 @@ export default function Responses(props) {
     }
 
         return (
-            <div className="container px-4 m-0">
+            <div className="ps-4 pe-5 m-0">
                 <h3 className="mt-3">Responses</h3>
                 <select class="form-select" onChange={(e) => onDeploymentChanged(e)} aria-label="Default select example">
                     {deployments.map((deployment) => (
