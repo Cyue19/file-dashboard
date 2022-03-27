@@ -7,8 +7,8 @@ export default function NavBar(props) {
             
             <div className="p-3 bg-dark mt-3" style={{height:"100vh", borderRadius: "3px"}}>
                 {/* <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> */}
-                
-                <hr className="bg-light"/>
+                <span style={{color: "white"}} className="fs-5">Navigation</span>
+                <hr className="bg-light mt-1"/>
                 <ul className="nav nav-pills flex-column mb-auto">
                 <li className="nav-item" >
                     <Link to="/" className={"nav-link link-light " + (props.path==="/" ? "active":"")}>
