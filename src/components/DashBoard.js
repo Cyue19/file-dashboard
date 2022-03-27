@@ -14,13 +14,13 @@ export default function DashBoard(props) {
                 <h3 className="mt-3">DashBoard:</h3>
                 <div className="row">
                     <div className="col-md-9">
-                        <div className="form-card" style={{margin: "0"}}>
+                        <div className="form-card mb-3" style={{margin: "0"}}>
                             <ActivityChart />
                         </div>
                     </div>
                     <div className="col-md-3">
-                            <div className="form-card mt-3">
-                            Last Uploaded:
+                            <div className="form-card">
+                            <b>Last Uploaded:</b>
                             <LastUpload type="files" endPoint="/files/last" deployment="" />
                             </div>
                     </div>
