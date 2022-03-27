@@ -28,7 +28,7 @@ export default function ResponseModal(props) {
 
     return (
         <div>
-            <button style={{margin: "auto"}} type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target={"#" + props.type + "Modal"}>
+            <button style={{margin: "auto"}} type="button" class="mt-3 btn btn-outline-primary" data-bs-toggle="modal" data-bs-target={"#" + props.type + "Modal"}>
                 See Responses
             </button>
 
@@ -36,7 +36,7 @@ export default function ResponseModal(props) {
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Responses Table</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
