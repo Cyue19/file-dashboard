@@ -21,7 +21,7 @@ export default function DashBoard(props) {
                     <div className="col-3">
                             <div className="form-card mt-3">
                             Last Uploaded:
-                            <LastUpload type="files" endPoint="/files/last"/>
+                            <LastUpload type="files" endPoint="/files/last" deployment="" />
                             </div>
                     </div>
                 </div>

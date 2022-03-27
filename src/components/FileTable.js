@@ -6,6 +6,7 @@ import { DateTime } from "luxon";
 export default function FileTable(props) {
   const [page, setPage] = useState(1);
   // console.log(props.files);
+  console.log(page);
 
   //calculate total pages needed for table
   function getTotalPages() {
@@ -66,7 +67,7 @@ export default function FileTable(props) {
     switch (props.type) {
       case "pain":
         return (
-          props.files.slice(0, 10).map((file) => (
+          props.files.slice((page - 1) * 10, page * 10).map((file) => (
           <tr key={file.idPainResponses}>
             <td>{file.idPainResponses}</td>
             <td>{file.questionOneAnswer}</td>
@@ -80,7 +81,7 @@ export default function FileTable(props) {
         );
       case "eod":
         return (
-          props.files.slice(0, 10).map((file) => (
+          props.files.slice((page - 1) * 10, page * 10).map((file) => (
           <tr key={file.idEnd_Of_Day_Responses}>
             <td>{file.idEnd_Of_Day_Responses}</td>
             <td>{file.question1}</td>
@@ -94,7 +95,7 @@ export default function FileTable(props) {
         );
       case "followUp":
         return (
-          props.files.slice(0, 10).map((file) => (
+          props.files.slice((page - 1) * 10, page * 10).map((file) => (
           <tr key={file.idFollow_Up}>
             <td>{file.idFollow_Up}</td>
             <td>{file.question1}</td>
