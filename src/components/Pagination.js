@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Pagination(props) {
     const { page, totPages } = props;
+    console.log(page);
 
     //create array of buttons
     function getPageButtons(pages) {

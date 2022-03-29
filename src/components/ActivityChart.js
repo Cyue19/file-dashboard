@@ -14,8 +14,8 @@ const dataset = {
         fill: false,
         label: "Documents",
         lineTension: 0.3,
-        borderColor: "#0d6efd",
-        pointBackgroundColor: "#0d6efd",
+        borderColor: "#19b5fe",
+        pointBackgroundColor: "#19b5fe",
         pointHoverRadius: 5,
         pointHoverBackgroundColor: "rgb(0, 0, 0)",
         pointHoverBorderColor: "rgba(220, 220, 220,1)",
@@ -65,7 +65,7 @@ export default function ActivityChart() {
 
   return (
     <MDBContainer>
-      Upload Activity
+      <b>Upload Activity</b>
       <Line
         data={state}
         options={{ legend: { display: false } }}

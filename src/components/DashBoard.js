@@ -10,25 +10,25 @@ export default function DashBoard(props) {
     props.setPath("/");
 
         return (
-            <div className="container">
+            <div className="ps-4 pe-5 m-0">
                 <h3 className="mt-3">DashBoard:</h3>
                 <div className="row">
-                    <div className="col-9" style={{padding: "0px 15px"}}>
-                        <div className="form-card my-3" style={{margin: "0", width: "55vw"}}>
+                    <div className="col-md-9">
+                        <div className="form-card mb-3" style={{margin: "0"}}>
                             <ActivityChart />
                         </div>
                     </div>
-                    <div className="col-3">
-                            <div className="form-card mt-3">
-                            Last Uploaded:
-                            <LastUpload type="files" endPoint="/files/last"/>
+                    <div className="col-md-3">
+                            <div className="form-card">
+                            <b>Last Uploaded:</b>
+                            <LastUpload type="files" endPoint="/files/last" deployment="" />
                             </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-12">
                         <div className="form-card my-3" style={{backgroundColor: "white", width: "100%"}}>
-                            Recent Uploads
+                            <b>Recent Uploads</b>
                             <FileWrapper type="recent"/>
                         </div>
                     </div>

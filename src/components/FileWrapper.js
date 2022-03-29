@@ -18,7 +18,7 @@ export default function FileWrapper(props){
     useEffect(() => {
       try {
         getFiles();
-        getCount();
+        // getCount();
       } catch(err) {
         console.log(err);
       }
@@ -29,12 +29,12 @@ export default function FileWrapper(props){
       setListFiles(response.data);
     }
 
-    async function getCount() {
-      var url = baseURL + "count";
-      //console.log(url);
-      const response = await axios.get(url);
-      //console.log(response);
-    }
+    // async function getCount() {
+    //   var url = baseURL + "count";
+    //   //console.log(url);
+    //   const response = await axios.get(url);
+    //   //console.log(response);
+    // }
 
     return (
         <div>

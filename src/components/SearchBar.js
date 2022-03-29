@@ -48,9 +48,9 @@ export default function SearchBar(props) {
             <form action="/files/search" onSubmit={(e) =>searchFiles(e)}>
                 <div className="input-group mb-3">
                     <select value={searchType} onChange={(e) => onSearchTypeChanged(e)} name="type" className="form-select col-2">
-                        <option value="fileName">File Name</option>
-                        <option value="location">File Path</option>
-                        <option value="size">Size</option>
+                        <option value="fileName">By File Name</option>
+                        <option value="location">By File Path</option>
+                        <option value="size">By Size</option>
                     </select>
                     <input type="text" className="input-group form-control" name="fileName" onChange={(e) => onSearchKeyChanged(e)} placeholder="" />
                     <Button variant="primary" type="submit">Search</Button>
