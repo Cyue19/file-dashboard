@@ -20,7 +20,7 @@ function App() {
 
     return(
       <BrowserRouter>
-        <Header/>
+        <Header path={path}/>
         <div className="row">
           <div className="col-2 me-3">
             <NavBar path={path}/>

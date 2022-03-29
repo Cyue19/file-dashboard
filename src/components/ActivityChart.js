@@ -65,7 +65,7 @@ export default function ActivityChart() {
 
   return (
     <MDBContainer>
-      Upload Activity
+      <b>Upload Activity</b>
       <Line
         data={state}
         options={{ legend: { display: false } }}

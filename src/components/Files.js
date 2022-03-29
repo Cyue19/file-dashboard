@@ -13,7 +13,7 @@ export default function Files(props) {
                 <SearchBar />
 
                 <div className="container mt-3 form-card">
-                    All Files
+                    <b>All Files</b>
                     <FileWrapper />
                 </div>
             </div>

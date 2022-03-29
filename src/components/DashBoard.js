@@ -20,7 +20,7 @@ export default function DashBoard(props) {
                     </div>
                     <div className="col-md-3">
                             <div className="form-card mt-3">
-                            Last Uploaded:
+                            <b>Last Uploaded:</b>
                             <LastUpload type="files" endPoint="/files/last"/>
                             </div>
                     </div>
@@ -28,7 +28,7 @@ export default function DashBoard(props) {
                 <div className="row">
                     <div className="col-12">
                         <div className="form-card my-3" style={{backgroundColor: "white", width: "100%"}}>
-                            Recent Uploads
+                            <b>Recent Uploads</b>
                             <FileWrapper type="recent"/>
                         </div>
                     </div>
