@@ -46,7 +46,7 @@ export default function Responses(props) {
 
                     <div className="row">
                         <div className="col-md-9" style={{padding: "0px 15px"}}>
-                            <div className="form-card mb-3" style={{margin: "0", width: "100%"}}>
+                            <div className="form-card mb-3" style={{margin: "auto", width: "100%"}}>
                                 <BarChart type="pain" endPoint="/responses/pain/counts" deployment = {selDeployment} />
                             </div>
                         </div>
@@ -65,7 +65,7 @@ export default function Responses(props) {
                     <h5 className="mt-3">Follow-up Responses</h5>
 
                     <div className="row">
-                        <div className="col-9" style={{padding: "0px 15px"}}>
+                        <div className="col-md-9" style={{padding: "0px 15px"}}>
                             <div className="form-card mb-3" style={{margin: "0", width: "100%"}}>
                                 <BarChart type="followUp" endPoint="/responses/follow_up/q1" deployment={selDeployment} />
                             </div>
@@ -80,18 +80,19 @@ export default function Responses(props) {
                             <ResponseModal type="followUp" endPoint="/responses/follow_up/" deployment = {selDeployment} />
                         </div>
                     </div>
+                    
                 </div>
 
                 <div>
                     <h5 className="mt-3">End-of-day Responses</h5>
 
                     <div className="row mb-4">
-                        <div className="col-9" style={{padding: "0px 15px"}}>
+                        <div className="col-md-9" style={{padding: "0px 15px"}}>
                             <div className="form-card mb-3" style={{margin: "0", width: "100%"}}>
                                 <BarChart type="eod" endPoint="/responses/end_of_day/q1" deployment={selDeployment} />
                             </div>
                         </div>
-
+                
                         <div className="col-md-3">
                             <div className="form-card">
                                 <b>Last Uploaded:</b>

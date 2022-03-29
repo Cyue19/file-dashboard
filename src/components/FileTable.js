@@ -132,7 +132,7 @@ export default function FileTable(props) {
   var lastPage = getTotalPages();
 
   return (
-    <div>
+    <div className="table-responsive">
       {props.files.length === 0 ? (
         <div>Loading</div>
       ) : (
