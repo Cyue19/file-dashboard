@@ -26,18 +26,12 @@
     button.navbar-toggler{
       display: block !important;
     }
-    div#navbar.navbar-collapse{
-      display:none;
-    }
   }
   
   button.navbar-toggler{
     display: none;
   }
 
-  div#navbar.navbar-collapse.collapse{
-    display:none;
-  }
 
   .sidebar-sticky {
     position: relative;
